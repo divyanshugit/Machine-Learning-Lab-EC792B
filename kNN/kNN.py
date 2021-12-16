@@ -39,3 +39,17 @@ class KNN():
             y_pred[i] = self._vote(k_nearest_neighbors)
 
         return y_pred
+
+X = np.random.rand(100, 2)
+y = np.random.randint(0, 2, size=100)
+X_train = X[:80]
+y_train = y[:80]
+X_test = X[80:]
+y_test = y[80:]
+print("Actual Value:",y_test)
+KNN = KNN()
+print("Pridicted Value:",KNN.predict(X_test, X_train, y_train))
+
+# Returns
+#Actual Value: [0 1 1 1 0 0 0 0 1 1 0 1 1 1 0 1 0 1 0 0]
+#Pridicted Value: [0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 1. 1. 1. 1. 0. 0. 1. 1.]
